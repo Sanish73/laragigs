@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,14 +20,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('listings',[
         'heading'=> 'sanish thapa',
-        'listings'=>[
-           
-        ]
+        'listings'=>Listing::all(),
 
     ]);
 });
 
 
+
+Route::get('/listings/{id}', function ($id) {
+    return view('listing',[
+        
+        'listingList'=>Listing::find($id),
+
+    ]);
+});
 
 // Route::get('/hello/{id}', function ($id) {
 //     dd($id);

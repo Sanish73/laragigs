@@ -6,6 +6,10 @@
 @endif
 
 @foreach ($listings as $item)
-    <h2>{{ $item['title'] }}</h2>
+    <h2>
+        <a href="http://localhost/laragigs/public/listings/{{$item['id']}}">
+        {{ $item['title'] }}
+        </a>
+    </h2>
     <p> {{ $item['description'] }}</p>
 @endforeach
