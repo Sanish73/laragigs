@@ -16,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/search', function (Request $request) {
-    dd($request->name ." ", $request->city);
+Route::get('/', function () {
+    return view('listings',[
+        'heading'=> 'sanish thapa',
+        'listings'=>[
+           
+        ]
+
+    ]);
 });
 
 
