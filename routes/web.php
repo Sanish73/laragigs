@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/hi', function () {
-    return response('<h1>Hello World</h1>');
+
+
+Route::get('/search', function (Request $request) {
+    dd($request->name ." ", $request->city);
 });
 
 
@@ -24,3 +27,17 @@ Route::get('/hi', function () {
 //     return response('response'.$id);
     
 // })->where('id','[0-9]+');
+
+
+// //this is API
+// Route::get('/post', function () {
+//     return response()->json([
+//         'posts'=>[
+//             [
+//                  'title'=>'post'
+
+//             ]
+           
+//         ]
+//             ]);
+//    });
